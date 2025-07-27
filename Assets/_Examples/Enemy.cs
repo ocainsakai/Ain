@@ -19,4 +19,11 @@ public class Enemy : MonoBehaviour
             player?.HealthSystem?.TakeDamage(10, DamageType.Physical);
         
     }
+
+    public void TakeTurn()
+    {
+        // Implement enemy AI logic here
+        Debug.Log($"{gameObject.name} is taking its turn.");
+        Attack();
+    }   
 }

@@ -1,10 +1,10 @@
-using System;
-using UniRx;
-using UnityEngine;
-using Ain.HealthSystem;
+
 namespace Ain.ActionSystem.Actions
 {
-
+    using System;
+    using UniRx;
+    using UnityEngine;
+    using Ain.HealthSystem;
     public class AttackAction : ActionState
     {
         public override ActionStateType Type => ActionStateType.Attacking;
@@ -17,7 +17,7 @@ namespace Ain.ActionSystem.Actions
             this.target = target ?? throw new ArgumentException(nameof(target));
             damage = dame > 0 ? dame : throw new ArgumentOutOfRangeException(nameof(dame), "Damage must be greater than zero.");
         }
-        public override void Enter()
+        public override void OnEnter()
         {
             Debug.Log("Entering Attack State");
             // Logic to initiate attack
@@ -25,12 +25,12 @@ namespace Ain.ActionSystem.Actions
             target.TakeDamage(damage, DamageType.Physical); // Example damage value
 
         }
-        public override void Update()
+        public override void Tick()
         {
             // Logic to handle attack updates
             // For example, check if the attack is complete
         }
-        public override void Exit()
+        public override void OnExit()
         {
             Debug.Log("Exiting Attack State");
             // Logic to clean up after the attack

@@ -1,14 +1,13 @@
 namespace Ain.ActionSystem
 {
+    using Ain.StateMachineSystem;
     using System;
-    using System.Collections.Generic;
     using UniRx;
     using UnityEngine;
-    public class ActionController : MonoBehaviour, IDisposable
+    public class ActionController : StateMachine<ActionState>, IDisposable
     {
         private CompositeDisposable _disposables = new CompositeDisposable();
         // Current action state
-        public ActionState CurrentState { get; private set; }
         // Events
         public Subject<Unit> OnActionStarted = new Subject<Unit>();
         public Subject<Unit> OnActionCompleted = new Subject<Unit>();
@@ -19,17 +18,17 @@ namespace Ain.ActionSystem
             // Initialize with an idle state
             //ChangeState(new IdleState());
         }
-        public void ChangeState(ActionState newState)
+        public override void ChangeState(IState newState)
         {
-            CurrentState?.Exit();
-            CurrentState = newState;
-            CurrentStateType.Value = newState.Type;
-            CurrentState.Enter();
+            CurrentState?.OnExit();
+            _currentState = newState;
+            CurrentStateType.Value = (newState as ActionState).Type;
+            CurrentState.OnEnter();
             OnActionStarted.OnNext(Unit.Default);
         }
         public void Update()
         {
-            CurrentState?.Update();
+            CurrentState?.Tick();
         }
         public void Dispose()
         {

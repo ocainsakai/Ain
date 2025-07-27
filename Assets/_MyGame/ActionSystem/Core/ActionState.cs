@@ -1,3 +1,4 @@
+using Ain.StateMachineSystem;
 using UnityEngine;
 
 namespace Ain.ActionSystem
@@ -16,11 +17,11 @@ namespace Ain.ActionSystem
         Buffing,
         Debuffing,
     }
-    public abstract class ActionState
+    public abstract class ActionState : IState
     {
         public virtual ActionStateType Type { get; protected set; }
-        public abstract void Enter();
-        public abstract void Update();
-        public abstract void Exit();
+        public abstract void OnEnter();
+        public abstract void Tick();
+        public abstract void OnExit();
     }
 }
