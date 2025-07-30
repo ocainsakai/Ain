@@ -1,0 +1,18 @@
+{
+  "name": "com.ain.aincore",
+  "version": "1.0.0",
+  "displayName": "Ain Core",
+  "description": "This is an Ain's core",
+  "unity": "6000.0",
+  "unityRelease": "25f1",
+  "dependencies": {
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask"
+
+ },
+
+  "author": {
+    "name": "Ocain"
+  }
+}
+
+

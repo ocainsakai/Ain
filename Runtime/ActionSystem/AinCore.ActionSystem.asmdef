@@ -1,0 +1,17 @@
+{
+    "name": "Ain.ActionSystem",
+    "rootNamespace": "Ain.ActionSystem",
+    "references": [
+        "GUID:6b9f70ce1b01059468df95c0713d80e1",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
