@@ -11,7 +11,11 @@ Repo này chứa các module như:
 
 Mục tiêu: **Tái sử dụng, mở rộng dễ dàng, độc lập tối đa giữa các hệ thống**.
 
-## 📁 Cấu trúc thư mục
+## 📦 Installation
+Add this package to your Unity project using Git URL:
+```text
+https://github.com/ocainsakai/Ain.git
+```
 
 ## 🧩 Yêu cầu
 
